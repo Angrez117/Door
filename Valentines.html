@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Bhavna ❤️ | Valentine’s Love Diary from Shantanu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap');
+        
+        :root {
+            --kuromi-pink: #ff4da6;
+            --kuromi-black: #1a0f2e;
+            --kuromi-purple: #6b21a8;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff0f5 0%, #f3e8ff 100%);
+            overflow-x: hidden;
+        }
+        
+        .kuromi-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .letter-text {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .envelope {
+            box-shadow: 0 35px 60px -15px rgba(244, 63, 94, 0.5);
+        }
+        
+        .heart-float {
+            position: absolute;
+            font-size: 32px;
+            animation: floatHeart 8s linear forwards;
+            z-index: 10;
+            filter: drop-shadow(0 0 8px #ff4da6);
+        }
+        
+        @keyframes floatHeart {
+            0% { transform: translateY(120vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-150px) rotate(360deg); opacity: 0; }
+        }
+        
+        .kuromi-stamp {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .kuromi-stamp:hover {
+            transform: scale(1.3) rotate(15deg);
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff4da6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative">
+    
+    <!-- Background Floating Elements -->
+    <div id="bg-hearts" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/50">
+        <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="https://i.pinimg.com/originals/0e/7f/0f/0e7f0f5e5f0e5f0e5f0e5f0e5f0e5f0e.png" alt="Kuromi" class="w-10 h-10 rounded-2xl">
+                <h1 class="kuromi-title text-3xl font-bold text-[#4c1d95] tracking-tighter">Kuromi’s Diary</h1>
+            </div>
+            <div class="flex items-center gap-10 text-sm font-medium text-[#4c1d95]">
+                <a href="#letter" class="nav-link cursor-pointer">The Letter</a>
+                <a href="#memories" class="nav-link cursor-pointer">Our Memories</a>
+                <a href="#reasons" class="nav-link cursor-pointer">Why I Love You</a>
+                <a href="#playlist" class="nav-link cursor-pointer">Our Songs</a>
+            </div>
+            <div class="flex items-center gap-2 text-[#ff4da6]">
+                <span class="text-2xl">💌</span>
+                <span class="font-medium">14.02.2026</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Envelope Section -->
+    <div class="min-h-screen flex items-center justify-center pt-20 relative">
+        <div class="text-center max-w-2xl mx-auto px-6">
+            <div class="mb-8 inline-flex items-center gap-2 bg-white/80 px-6 py-2 rounded-full text-sm font-medium text-[#4c1d95]">
+                <span class="text-xl">🖤</span>
+                From Shantanu to Bhavna
+                <span class="text-xl">💖</span>
+            </div>
+            
+            <h1 class="text-7xl kuromi-title font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#4c1d95] via-[#c026d3] to-[#ff4da6] leading-none mb-4">
+                Happy Valentine’s Day Bhavna<br>
+                <span class="text-8xl text-[#ff4da6]">My Biwi</span>
+            </h1>
+            
+            <p class="text-xl text-[#6b21a8] mb-12">My forever partner • My softest </p>
+            
+            <!-- The Kuromi Envelope -->
+            <div id="envelope-wrapper" class="relative mx-auto w-96 h-72 cursor-pointer group" onclick="openEnvelope()">
+                <div id="envelope" class="envelope w-full h-full bg-gradient-to-br from-[#4c1d95] to-[#c026d3] rounded-3xl relative flex items-center justify-center overflow-hidden">
+                    
+                    <!-- Flap -->
+                    <div id="flap" class="absolute top-0 left-0 w-full h-1/2 bg-[#1e0f33] rounded-t-3xl origin-top transition-all duration-700 z-10" style="clip-path: polygon(0 0, 100% 0, 50% 70%);"></div>
+                    
+                    <!-- Seal -->
+                    <div class="absolute top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-white rounded-full flex items-center justify-center z-20 shadow-xl kuromi-stamp">
+                        <div class="w-16 h-16 bg-[#ff4da6] rounded-full flex items-center justify-center text-4xl shadow-inner border-4 border-white">
+                            🖤
+                        </div>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div class="absolute bottom-12 left-12 text-white text-sm font-light">
+                        To: Bhavna<br>
+                        <span class="text-2xl font-semibold tracking-wider">My Everything</span>
+                    </div>
+                    
+                    <div class="absolute bottom-12 right-12 text-[#ff4da6] text-xs font-medium uppercase tracking-widest">From Shantanu</div>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-[#9f7aea] text-sm font-medium">Click the envelope to open your love diary 💌</p>
+        </div>
+    </div>
+
+    <!-- The Full Love Letter Section -->
+    <section id="letter" class="min-h-screen py-24 bg-white/70 relative">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="paper bg-[#fffaf0] border border-[#e2c4a0] rounded-3xl p-16 shadow-2xl relative">
+                
+                <!-- Decorative top -->
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 flex gap-6 text-5xl opacity-20">
+                    🖤 <span class="text-[#ff4da6]">💖</span> 🖤
+                </div>
+                
+                <div class="text-center mb-12">
+                    <div class="text-[#4c1d95] text-xs tracking-[4px] font-medium">FEBRUARY 14, 2026</div>
+                    <div class="text-5xl letter-text text-[#c026d3] mt-2">My dearest Bhavna,</div>
+                </div>
+                
+                <div class="letter-text text-2xl leading-relaxed text-[#3f2a5a] space-y-10 text-justify">
+                    <p>Every year on Valentine’s Day I think the same thing — how did I get so lucky to call you mine?</p>
+                    
+                    <p>You are my favorite chaos. The way you laugh at my silly jokes, the way you steal my hoodies, the way you look at me like I’m the only person in the room. You make my world softer, brighter, and a thousand times more beautiful.</p>
+                    
+                    <p>Thank you for every midnight call when I couldn’t sleep, for every surprise kiss, for believing in me even when I doubted myself. You are my safe place and my biggest adventure all at once.</p>
+                    
+                    <p>I promise to keep making you laugh, to always choose you first, to hold your hand through every season of life. Whether we’re traveling the world or just lazy Sundays on the couch — I want all of it with you.</p>
+                    
+                    <div class="pt-8 border-t border-dashed border-[#c4a484]">
+                        <p class="text-center italic text-[#6b21a8]">You are my forever favorite love,<br>my soulmate .</p>
+                    </div>
+                    
+                    <p class="pt-6">Happy Valentine’s Day, my love. Here’s to us — the best love story ever written.</p>
+                </div>
+                
+                <!-- Closing -->
+                <div class="mt-16 flex flex-col items-end">
+                    <div class="letter-text text-6xl text-[#c026d3]">With all my love,</div>
+                    <div class="flex items-center gap-4 mt-6">
+                        <div class="h-px w-20 bg-gradient-to-r from-transparent via-[#ff4da6] to-transparent"></div>
+                        <span class="text-4xl">🖤</span>
+                        <div class="h-px w-20 bg-gradient-to-r from-transparent via-[#ff4da6] to-transparent"></div>
+                    </div>
+                    <div class="letter-text text-7xl text-[#4c1d95] mt-3">Shantanu</div>
+                    <div class="text-[#9f7aea] text-sm">Yours forever Hubby • Your personal Bodyguard</div>
+                </div>
+                
+                <!-- Cute bottom -->
+                <div onclick="sendBigKiss()" class="absolute bottom-8 right-8 text-4xl cursor-pointer hover:scale-125 transition-transform">💋</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Gallery -->
+    <section id="memories" class="py-24 bg-gradient-to-b from-white to-[#f3e8ff]">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-6 py-2 bg-[#ff4da6] text-white text-sm font-medium rounded-full">Our Moments</div>
+                <h2 class="text-5xl kuromi-title text-[#4c1d95] mt-4">With My Bubu</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-3xl aspect-square">
+                    <img src="https://i.ibb.co/5XQYJkLD/Screenshot-20260205-125405-Instagram.jpg" class="w-full h-full object-cover transition-all group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <p class="text-white text-sm">.</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl aspect-square">
+                    <img src="https://i.ibb.co/LX0y77mb/2025-09-03-b-Ei-ASFUVw-Qz-Bi-NFV3-OGlmaj-Qw-Tm-Fq-M1-NQRDIBD0g-CUARg-AQ.jpg" class="w-full h-full object-cover transition-all group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <p class="text-white text-sm">Fit Check</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl aspect-square">
+                    <img src="https://i.ibb.co/ymfrzJX0/unnamed.jpg" class="w-full h-full object-cover transition-all group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <p class="text-white text-sm">Heart With Hands</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl aspect-square">
+                    <img src="https://i.ibb.co/TMWyHx6Q/Picsart-26-01-01-04-28-15-705.png" class="w-full h-full object-cover transition-all group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <p class="text-white text-sm">Our Beautiful Eyes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why I Love You (Flip Cards) -->
+    <section id="reasons" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-8">
+            <h2 class="text-center text-5xl kuromi-title text-[#4c1d95] mb-16">Reasons I Love You, Bhavna</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flip-card h-80">
+                    <div class="flip-card-inner relative h-full">
+                        <div class="flip-card-front glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <div class="text-6xl mb-6">🖤</div>
+                            <div class="text-2xl font-medium text-[#4c1d95]">Our late night things</div>
+                            <div class="text-sm text-[#9f7aea] mt-2">😏</div>
+                        </div>
+                        <div class="flip-card-back glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <p class="text-[#4c1d95]">Our Late night making out Fucking and Kissing each other, Taking out the whole day stress out and cuddle each other skin to skin.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card h-80">
+                    <div class="flip-card-inner relative h-full">
+                        <div class="flip-card-front glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <div class="text-6xl mb-6">🌙</div>
+                            <div class="text-2xl font-medium text-[#4c1d95]">Your Cuteness.</div>
+                        </div>
+                        <div class="flip-card-back glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <p class="text-[#4c1d95]">Your Beautiful Face and those big cute eyes and such a good smile. I fall for you everyday</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card h-80">
+                    <div class="flip-card-inner relative h-full">
+                        <div class="flip-card-front glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <div class="text-6xl mb-6">🍜</div>
+                            <div class="text-2xl font-medium text-[#4c1d95]">Our Bing Watching</div>
+                        </div>
+                        <div class="flip-card-back glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <p class="text-[#4c1d95]">Watching the anime, moving, K-dramas are my favourite thing to do when we both are tired that was always stress busters for me.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card h-80">
+                    <div class="flip-card-inner relative h-full">
+                        <div class="flip-card-front glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <div class="text-6xl mb-6">💃</div>
+                            <div class="text-2xl font-medium text-[#4c1d95]">Time With you</div>
+                        </div>
+                        <div class="flip-card-back glass absolute inset-0 rounded-3xl p-10 flex flex-col items-center justify-center text-center border border-white">
+                            <p class="text-[#4c1d95]">The time I spent with you is like heaven to me and I am soo lucky to have you and got chance to spend the time with you I wana literally spend whole day with bring you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlist -->
+    <section id="playlist" class="py-24 bg-[#4c1d95] text-white">
+        <div class="max-w-4xl mx-auto px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl kuromi-title">Our Love Songs</h2>
+                <p class="text-[#e0bbff]">Play while you read this ❤️</p>
+            </div>
+            
+            <div class="glass bg-white/10 rounded-3xl p-10">
+                <button onclick="togglePlaylist()" id="play-btn" class="w-full py-6 bg-white/10 hover:bg-white/20 rounded-2xl flex items-center justify-center gap-4 text-2xl transition-all">
+                    <span>▶️</span>
+                    <span id="song-name">Both Of Us (our version)</span>
+                </button>
+                <audio id="playlist-audio" loop class="hidden">
+                    <source src="https://audio.jukehost.co.uk/395YQR8rsE57c85xnmB1RP5RsXGh7MuD" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message -->
+    <div class="py-32 bg-gradient-to-br from-[#ff4da6] to-[#4c1d95] text-white text-center">
+        <div class="max-w-lg mx-auto px-6">
+            <div class="text-6xl mb-8">🖤💖🖤</div>
+            <p class="text-3xl leading-snug">Bhavna, thank you for being the most beautiful part of my life. I love you more than all the stars in the sky.</p>
+            <div onclick="launchBigConfetti()" class="mt-12 inline-block px-16 py-6 bg-white text-[#4c1d95] rounded-full font-medium text-lg cursor-pointer hover:scale-110 transition-transform">
+                Click to celebrate us 🎉
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-float';
+            heart.innerHTML = Math.random() > 0.5 ? '🖤' : '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (6 + Math.random() * 7) + 's';
+            document.getElementById('bg-hearts').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 15000);
+        }
+        
+        setInterval(() => {
+            if (Math.random() > 0.4) createHeart();
+        }, 300);
+        
+        // Music
+        let isPlaying = false;
+        const audio = document.getElementById('playlist-audio');
+        const btn = document.getElementById('play-btn');
+
+        // Prepare audio (preload + temporary mute helps browsers allow playback later)
+        audio.preload = "auto";
+        audio.muted = true; // start muted → we'll unmute on real user interaction
+
+        function togglePlaylist() {
+            if (isPlaying) {
+                audio.pause();
+                btn.innerHTML = `<span>▶️</span><span id="song-name">Both Of Us (our version)</span>`;
+            } else {
+                audio.muted = false;           // unmute now
+                audio.play().catch(e => console.log("Play failed:", e));
+                btn.innerHTML = `<span>❚❚</span><span id="song-name">Now playing for Bhavna ❤️</span>`;
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Open envelope + auto start music after click (this is the key part)
+        function openEnvelope() {
+            const envelope = document.getElementById('envelope');
+            const flap = document.getElementById('flap');
+            
+            flap.style.transform = 'rotateX(-170deg)';
+            
+            gsap.to(envelope, {
+                y: -80,
+                scale: 0.95,
+                duration: 0.8,
+                onComplete: () => {
+                    document.getElementById('letter').scrollIntoView({ behavior: 'smooth' });
+                    // Burst hearts
+                    for (let i = 0; i < 30; i++) {
+                        setTimeout(createHeart, i * 40);
+                    }
+                    
+                    // Auto-play music after envelope click (browser allows it now)
+                    if (!isPlaying) {
+                        togglePlaylist();  // this will play the song automatically
+                    }
+                }
+            });
+        }
+        
+        // Send kiss
+        function sendBigKiss() {
+            confetti({
+                particleCount: 80,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff4da6', '#4c1d95', '#c026d3']
+            });
+            
+            const kiss = document.createElement('div');
+            kiss.textContent = '💋';
+            kiss.style.position = 'fixed';
+            kiss.style.fontSize = '90px';
+            kiss.style.left = '50%';
+            kiss.style.top = '60%';
+            kiss.style.transform = 'translate(-50%, -50%)';
+            kiss.style.zIndex = '100';
+            kiss.style.transition = 'all 2s';
+            document.body.appendChild(kiss);
+            
+            setTimeout(() => {
+                kiss.style.transform = 'translate(-50%, -200%) scale(0.2)';
+                kiss.style.opacity = '0';
+            }, 100);
+            
+            setTimeout(() => kiss.remove(), 2500);
+        }
+        
+        // Confetti celebration
+        function launchBigConfetti() {
+            const duration = 4000;
+            const animationEnd = Date.now() + duration;
+            
+            const colors = ['#ff4da6', '#c026d3', '#4c1d95', '#e0bbff'];
+            
+            (function frame() {
+                confetti({
+                    particleCount: 12,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: colors
+                });
+                confetti({
+                    particleCount: 12,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: colors
+                });
+                
+                if (Date.now() < animationEnd) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+        
+        // Keyboard fun
+        document.addEventListener('keydown', e => {
+            if (e.key === 'k') sendBigKiss();
+            if (e.key === 'c') launchBigConfetti();
+        });
+        
+        // GSAP on load
+        window.onload = () => {
+            gsap.from(".kuromi-title", {
+                y: 60,
+                opacity: 0,
+                duration: 1.4,
+                ease: "back.out(1)"
+            });
+            
+            // Auto hearts
+            for (let i = 0; i < 18; i++) {
+                setTimeout(createHeart, i * 90);
+            }
+        };
+    </script>
+</body>
+</html>
